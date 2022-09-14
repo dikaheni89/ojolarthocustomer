@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>90511765723-ur7idb5tsg03hfpfibsqrakhhnbeou7i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.90511765723-ur7idb5tsg03hfpfibsqrakhhnbeou7i</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>90511765723-3q4h4o5u6t3ht8o8ald19of8p90ev1um.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvC2rabSg-9fgyTCHUjlmx24HCixcVzy4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>90511765723</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>artho.super.app</string>
+	<key>PROJECT_ID</key>
+	<string>artho-ojol</string>
+	<key>STORAGE_BUCKET</key>
+	<string>artho-ojol.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:90511765723:ios:5155a495fa60a673d89cfe</string>
+</dict>
+</plist>

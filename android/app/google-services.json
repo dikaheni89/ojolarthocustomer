@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90511765723",
+    "project_id": "artho-ojol",
+    "storage_bucket": "artho-ojol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90511765723:android:f27d538a1b4566c1d89cfe",
+        "android_client_info": {
+          "package_name": "id.artho.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90511765723-1trtqtofqpottcrpbm3r7ek6uhbkd4vo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsXXH83oLl9l6lEgE_iNefOErV36E7jio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90511765723-1trtqtofqpottcrpbm3r7ek6uhbkd4vo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

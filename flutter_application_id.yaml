@@ -1,0 +1,7 @@
+flutter_application_id:
+  android:
+    id: "id.artho.customer"
+    name: "Artho"
+  ios:
+    id: "id.artho.customer"
+    name: "Artho"
