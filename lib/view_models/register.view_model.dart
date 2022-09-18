@@ -18,9 +18,9 @@ class RegisterViewModel extends MyBaseViewModel {
   // FirebaseAuth auth = FirebaseAuth.instance;
   //the textediting controllers
   TextEditingController nameTEC =
-      new TextEditingController(text: !kReleaseMode ? "John Doe" : "");
+      new TextEditingController(text: !kReleaseMode ? "Artho" : "");
   TextEditingController emailTEC =
-      new TextEditingController(text: !kReleaseMode ? "john@mail.com" : "");
+      new TextEditingController(text: !kReleaseMode ? "artho@mail.com" : "");
   TextEditingController phoneTEC =
       new TextEditingController(text: !kReleaseMode ? "557484181" : "");
   TextEditingController passwordTEC =
@@ -64,14 +64,14 @@ class RegisterViewModel extends MyBaseViewModel {
     if (formKey.currentState.validate() && agreed) {
       //
       print("cek");
-      print(AppStrings.isFirebaseOtp);
-      if (AppStrings.isFirebaseOtp) {
-        processFirebaseOTPVerification();
-      } else if (AppStrings.isCustomOtp) {
-        processCustomOTPVerification();
-      } else {
-        finishAccountRegistration();
-      }
+      // print(AppStrings.isFirebaseOtp);
+      // if (AppStrings.isFirebaseOtp) {
+      // processFirebaseOTPVerification();
+      // } else if (AppStrings.isCustomOtp) {
+      //   processCustomOTPVerification();
+      // } else {
+      finishAccountRegistration();
+      // }
     }
   }
 
@@ -151,7 +151,6 @@ class RegisterViewModel extends MyBaseViewModel {
             : null,
       ),
     );
-    
   }
 
   //
@@ -225,7 +224,7 @@ class RegisterViewModel extends MyBaseViewModel {
         await AuthServices.setAuthBearerToken(apiResponse.body["token"]);
         await AuthServices.isAuthenticated();
         viewContext.navigator.pushNamedAndRemoveUntil(
-          AppRoutes.homeRoute,
+          AppRoutes.loginRoute,
           (_) => false,
         );
       }
@@ -234,9 +233,9 @@ class RegisterViewModel extends MyBaseViewModel {
       print(error.message);
       CoolAlert.show(
         context: viewContext,
-        type: CoolAlertType.error,
-        title: "Login Failed".tr(),
-        text: "${error.message}",
+        type: CoolAlertType.success,
+        title: "Registrasi Berhasil".tr(),
+        text: "Silahkan Login",
       );
     } catch (error) {
       print("Error lain");

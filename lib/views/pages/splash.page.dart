@@ -21,15 +21,7 @@ class SplashPage extends StatelessWidget {
               //
               Image.asset(
                 AppImages.logokop,
-                height: 300,
-                width: 300,
-              )
-                  .wh(Vx.dp64, Vx.dp64)
-                  .box
-                  .clip(Clip.antiAlias)
-                  .roundedSM
-                  .makeCentered()
-                  .py12(),
+              ).wh(200.0, 200.0).box.clip(Clip.antiAlias).makeCentered().py12(),
               "Loading Please wait...".tr().text.makeCentered(),
             ],
           ).centered();

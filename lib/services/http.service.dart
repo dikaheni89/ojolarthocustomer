@@ -51,7 +51,7 @@ class HttpService {
     // );
   }
 
-  DioCacheManager getCacheManager(){
+  DioCacheManager getCacheManager() {
     return DioCacheManager(
       CacheConfig(
         baseUrl: host,
@@ -68,7 +68,7 @@ class HttpService {
   }) async {
     //preparing the api uri/url
     String uri = "$host$url";
-    if(kDebugMode){
+    if (kDebugMode) {
       print(uri);
     }
 
@@ -87,13 +87,13 @@ class HttpService {
   }
 
   Future<Response> getPPOB(
-      String url, {
-        Map<String, dynamic> queryParameters,
-        // bool includeHeaders = true,
-      }) async {
+    String url, {
+    Map<String, dynamic> queryParameters,
+    // bool includeHeaders = true,
+  }) async {
     //preparing the api uri/url
     String uri = Api.baseUrlPPOB + url;
-    if(kDebugMode){
+    if (kDebugMode) {
       print(uri);
     }
 
@@ -119,7 +119,7 @@ class HttpService {
   }) async {
     //preparing the api uri/url
     String uri = "$host$url";
-    if(kDebugMode){
+    if (kDebugMode) {
       print(uri);
     }
     //preparing the post options if header is required
@@ -136,14 +136,32 @@ class HttpService {
     );
   }
 
+  Future<Response> postRegis(
+    String url,
+    body, {
+    bool includeHeaders = true,
+  }) async {
+    //preparing the api uri/url
+    String uri = Api.baseUrlApi + url;
+    if (kDebugMode) {
+      print(uri);
+    }
+
+    return dio.post(uri,
+        data: body,
+        options: Options(contentType: "application/x-www-form-urlencoded")
+        // options: mOptions,
+        );
+  }
+
   Future<Response> postPPOB(
-      String url,
-      body, {
-        bool includeHeaders = true,
-      }) async {
+    String url,
+    body, {
+    bool includeHeaders = true,
+  }) async {
     //preparing the api uri/url
     String uri = Api.baseUrlPPOB + url;
-    if(kDebugMode){
+    if (kDebugMode) {
       print(uri);
     }
     //preparing the post options if header is required
@@ -153,14 +171,11 @@ class HttpService {
     //   headers: await getHeaders(),
     // );
 
-    return dio.post(
-      uri,
-      data: body,
-      options: Options(
-        contentType: "application/x-www-form-urlencoded"
-      )
-      // options: mOptions,
-    );
+    return dio.post(uri,
+        data: body,
+        options: Options(contentType: "application/x-www-form-urlencoded")
+        // options: mOptions,
+        );
   }
 
   //for post api calls with file upload
@@ -196,7 +211,7 @@ class HttpService {
   //for patch api calls
   Future<Response> patch(String url, Map<String, dynamic> body) async {
     String uri = "$host$url";
-    if(kDebugMode){
+    if (kDebugMode) {
       print(uri);
     }
     return dio.patch(
@@ -222,7 +237,6 @@ class HttpService {
   }
 
   Response formatDioExecption(DioError ex) {
-
     var response = Response(requestOptions: ex.requestOptions);
     response.statusCode = 400;
     try {
@@ -248,15 +262,12 @@ class HttpService {
     return response;
   }
 
-
-
-
   //NEUTRALS
   Future<Response> getExternal(
     String url, {
     Map<String, dynamic> queryParameters,
   }) async {
-    if(kDebugMode){
+    if (kDebugMode) {
       print(url);
     }
     return dio.get(

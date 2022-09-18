@@ -85,7 +85,6 @@ class _OrdersPageState extends State<OrdersPage>
                         //
                         emptyWidget: EmptyOrder(),
                         itemBuilder: (context, index) {
-
                           final order = vm.orders[index];
                           //for taxi tye of order
                           if (order.taxiOrder != null) {
@@ -99,9 +98,12 @@ class _OrdersPageState extends State<OrdersPage>
                             onPayPressed: () async {
                               // print(order.paymentMethod.payment_gateway);
                               String url = order.paymentLink;
-                              if(order.paymentMethod.payment_gateway == "duitku"){
+                              if (order.paymentMethod.payment_gateway ==
+                                  "duitku") {
                                 AlertService.showLoading();
-                                url = await OrderRequest().getPaymentLink(orderCode: order.code) ?? order.paymentLink;
+                                url = await OrderRequest().getPaymentLink(
+                                        orderCode: order.code) ??
+                                    order.paymentLink;
                                 AlertService.stopLoading();
                               }
                               vm.openWebpageLink(url);
@@ -109,7 +111,8 @@ class _OrdersPageState extends State<OrdersPage>
                             orderPressed: () => vm.openOrderDetails(order),
                           );
                         },
-                        separatorBuilder: (context,index) => UiSpacer.verticalSpace(space: 2),
+                        separatorBuilder: (context, index) =>
+                            UiSpacer.verticalSpace(space: 2),
                       ).expand()
                     : EmptyState(
                         auth: true,

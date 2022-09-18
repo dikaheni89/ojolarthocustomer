@@ -3,12 +3,14 @@
 class Api {
   static String get baseUrl {
     return "https://ojol.arthopay.id/api";
-    // return "https://ojoldev.arthopay.id/api";
-    // return "http://192.168.8.168:8000/api";
   }
 
   static String get baseUrlArtho {
     return "https://arthopay.id/api";
+  }
+
+  static String get baseUrlApi {
+    return "https://api.arthopay.id/api";
   }
 
   static String get baseUrlPPOB {
@@ -20,6 +22,7 @@ class Api {
   static const login = "/login";
   static const qrlogin = "/login/qrcode";
   static const register = "/register";
+  static const multiRegistrasi = "/multiregistrasi";
   static const logout = "/logout";
   static const forgotPassword = "/password/reset/init";
   static const verifyPhoneAccount = "/verify/phone";

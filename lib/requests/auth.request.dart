@@ -20,7 +20,7 @@ class AuthRequest extends HttpService {
         "password": password,
       },
     );
-    if(kDebugMode){
+    if (kDebugMode) {
       print(apiResult);
     }
 
@@ -68,18 +68,19 @@ class AuthRequest extends HttpService {
     @required String password,
     String code = "",
   }) async {
-    final apiResult = await post(
-      Api.register,
+    final apiResult = await postRegis(
+      Api.multiRegistrasi,
       {
         "name": name,
         "email": email,
         "phone": phone,
         "country_code": countryCode,
+        "status": '3',
         "password": password,
         "code": code,
       },
     );
-    if(kDebugMode){
+    if (kDebugMode) {
       log(apiResult.toString());
     }
     return ApiResponse.fromResponse(apiResult);
@@ -187,7 +188,6 @@ class AuthRequest extends HttpService {
     String phoneNumber,
     String firebaseVerificationId,
   ) async {
-
     //
     final apiResult = await post(
       Api.verifyFirebaseOtp,
@@ -196,7 +196,7 @@ class AuthRequest extends HttpService {
         "firebase_id_token": firebaseVerificationId,
       },
     );
-    if(kDebugMode){
+    if (kDebugMode) {
       print(apiResult);
     }
     final apiResponse = ApiResponse.fromResponse(apiResult);
@@ -206,17 +206,15 @@ class AuthRequest extends HttpService {
       throw apiResponse.message;
     }
   }
+
   //
   Future<ApiResponse> socialLogin(
     String email,
     String firebaseVerificationId,
-    String provider,
-    {
-      String nonce,
-      String uid,
-    }
-  ) async {
-
+    String provider, {
+    String nonce,
+    String uid,
+  }) async {
     //
     final apiResult = await post(
       Api.socialLogin,
@@ -231,9 +229,9 @@ class AuthRequest extends HttpService {
     final apiResponse = ApiResponse.fromResponse(apiResult);
     if (apiResponse.allGood) {
       return apiResponse;
-    } else if(apiResponse.code == 401){
+    } else if (apiResponse.code == 401) {
       return null;
-    }else {
+    } else {
       throw apiResponse.message;
     }
   }

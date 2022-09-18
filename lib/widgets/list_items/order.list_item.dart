@@ -3,9 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:fuodz/constants/app_colors.dart';
 import 'package:fuodz/constants/rupiah.dart';
 import 'package:fuodz/extensions/dynamic.dart';
-import 'package:fuodz/extensions/string.dart';
 import 'package:fuodz/models/order.dart';
-import 'package:fuodz/constants/app_strings.dart';
 import 'package:fuodz/utils/ui_spacer.dart';
 import 'package:fuodz/widgets/buttons/custom_button.dart';
 import 'package:jiffy/jiffy.dart';
@@ -36,10 +34,7 @@ class OrderListItem extends StatelessWidget {
                 HStack(
                   [
                     "#${order.code}".text.medium.make().expand(),
-                    rupiah(order.total).text
-                        .lg
-                        .semiBold
-                        .make(),
+                    rupiah(order.total).text.lg.semiBold.make(),
                     // "${AppStrings.currencySymbol} ${order.total}"
                     //     .currencyFormat()
                     //     .text
@@ -56,12 +51,12 @@ class OrderListItem extends StatelessWidget {
                 HStack(
                   [
                     (order.isPackageDelivery
-                        ? order.packageType.name
-                        : order.isSerice
-                        ? "${order?.orderService?.service?.category?.name}"
-                        : "%s Product(s)"
-                        .tr()
-                        .fill([order.orderProducts.length ?? 0]))
+                            ? order.packageType.name
+                            : order.isSerice
+                                ? "${order?.orderService?.service?.category?.name}"
+                                : "%s Product(s)"
+                                    .tr()
+                                    .fill([order.orderProducts.length ?? 0]))
                         .text
                         .medium
                         .make()
@@ -71,8 +66,8 @@ class OrderListItem extends StatelessWidget {
                         .allWordsCapitilize()
                         .text
                         .color(
-                      AppColor.getStausColor(order.status),
-                    )
+                          AppColor.getStausColor(order.status),
+                        )
                         .medium
                         .make(),
                   ],
@@ -83,8 +78,7 @@ class OrderListItem extends StatelessWidget {
                     //time
                     Visibility(
                       visible: order.paymentMethod != null,
-                      child:
-                      "${order.paymentMethod?.name}".text.medium.make(),
+                      child: "${order.paymentMethod?.name}".text.medium.make(),
                     ).expand(),
                     VxTextBuilder(Jiffy(order.createdAt).format('dd E, MMM y'))
                         .sm
@@ -101,15 +95,15 @@ class OrderListItem extends StatelessWidget {
         //payment is pending
         order.isPaymentPending
             ? CustomButton(
-          title: "PAY FOR ORDER".tr(),
-          titleStyle: context.textTheme.bodyText1.copyWith(
-            color: Colors.white,
-          ),
-          icon: FlutterIcons.credit_card_fea,
-          iconSize: 18,
-          onPressed: onPayPressed,
-          shapeRadius: 0,
-        )
+                title: "PAY FOR ORDER".tr(),
+                titleStyle: context.textTheme.bodyText1.copyWith(
+                  color: Colors.white,
+                ),
+                icon: FlutterIcons.credit_card_fea,
+                iconSize: 18,
+                onPressed: onPayPressed,
+                shapeRadius: 0,
+              )
             : UiSpacer.emptySpace(),
       ],
     )
