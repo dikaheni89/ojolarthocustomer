@@ -332,8 +332,7 @@ class Order {
 
   bool get canCancel => ["scheduled", "pending"].contains(status);
   bool get canCancelTaxi =>
-      driverId == null ||
-      ["scheduled", "pending", "preparing", "ready"].contains(status);
+      driverId == null || ["scheduled", "preparing", "ready"].contains(status);
 
   bool get canRateVendor {
     return this.canRate && ["cancelled", "delivered"].contains(status);

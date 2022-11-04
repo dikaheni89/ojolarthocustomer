@@ -43,13 +43,13 @@ class EmailLoginView extends StatelessWidget {
               onPressed: model.processLogin,
             ).centered().py12(),
 //otp login
-            "Login with Phone Number"
-                .tr()
-                .text
-                .semiBold
-                .makeCentered()
-                .py12()
-                .onInkTap(model.toggleLoginType),
+            // "Login with Phone Number"
+            //     .tr()
+            //     .text
+            //     .semiBold
+            //     .makeCentered()
+            //     .py12()
+            //     .onInkTap(model.toggleLoginType),
             //register
             "OR".tr().text.light.makeCentered(),
             "Create An Account"

@@ -369,8 +369,8 @@ class CheckoutBaseViewModel extends PaymentViewModel {
         title: "Payment Methods".tr(),
         text: "Please select a payment method".tr(),
       );
-    } else if (!ignore && !verifyVendorOrderAmountCheck()) {
-      print("Failed");
+      // } else if (!ignore && !verifyVendorOrderAmountCheck()) {
+      // print("Failed");
     }
     //process the new order
     else {

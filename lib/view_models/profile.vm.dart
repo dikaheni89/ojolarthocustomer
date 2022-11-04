@@ -42,7 +42,6 @@ class ProfileViewModel extends PaymentViewModel {
     authenticated = await AuthServices.authenticated();
     if (authenticated) {
       currentUser = await AuthServices.getCurrentUser(force: true);
-
     }
     notifyListeners();
   }

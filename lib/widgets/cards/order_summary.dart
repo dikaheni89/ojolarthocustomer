@@ -54,7 +54,7 @@ class OrderSummary extends StatelessWidget {
         // ).py2(),
         AmountTile(
           "Delivery Fee".tr(),
-          "+ " + rupiah(deliveryFee ?? 0),
+          "+ " + (deliveryFee ?? 0).currencyValueFormat(),
         ).py2(),
         // AmountTile(
         //   "Tax (%s)".tr().fill(["${vendorTax ?? 0}%"]),
@@ -81,12 +81,10 @@ class OrderSummary extends StatelessWidget {
             ],
           ),
         ),
-        AmountTile(
-          "Total Amount".tr(),
-          rupiah(total ?? 0)
-          // "$currencySymbol ${total ?? 0}"
-          //     .currencyFormat(currencySymbol),
-        ),
+        AmountTile("Total Amount".tr(), (total ?? 0).currencyValueFormat()
+            // "$currencySymbol ${total ?? 0}"
+            //     .currencyFormat(currencySymbol),
+            ),
       ],
     );
   }

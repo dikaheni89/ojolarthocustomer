@@ -80,11 +80,10 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
 
-                        //otp form
-                        OTPLoginView(model),
-
                         //email form
                         EmailLoginView(model),
+                        //otp form
+                        OTPLoginView(model),
                       ],
                     ).wFull(context).px20().pOnly(top: Vx.dp20),
                     //

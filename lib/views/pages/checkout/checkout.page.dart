@@ -76,7 +76,7 @@ class CheckoutPage extends StatelessWidget {
                 tax: vm.checkout.tax,
                 vendorTax: vm.vendor.tax,
                 driverTip: vm.driverTipTEC.text.toDouble() ?? 0.00,
-                total: vm.checkout.totalWithTip,
+                total: vm.checkout.totalWithTip + vm.checkout.deliveryFee,
               ),
 
               //

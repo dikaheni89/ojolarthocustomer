@@ -32,16 +32,8 @@ class OrderTaxiButton extends StatelessWidget {
               " ".text.make(),
               CurrencyHStack(
                 [
-                  "${currencySymbol} "
-                      .text
-                      .semiBold
-                      .xl
-                      .make(),
-                  "${vm.total.currencyValueFormat()}"
-                      .text
-                      .semiBold
-                      .xl
-                      .make(),
+                  "${currencySymbol} ".text.semiBold.xl.make(),
+                  "${vm.total.currencyValueFormat()}".text.semiBold.xl.make(),
                 ],
               ),
             ],

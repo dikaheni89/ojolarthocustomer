@@ -57,7 +57,7 @@ class TaxiRateDriverView extends StatelessWidget {
             UiSpacer.verticalSpace(),
             "Rate your trip".tr().text.make(),
             RatingBar.builder(
-              initialRating: 3,
+              initialRating: 5,
               minRating: 1,
               direction: Axis.horizontal,
               allowHalfRating: false,

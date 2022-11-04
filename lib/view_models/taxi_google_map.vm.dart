@@ -57,7 +57,7 @@ class TaxiGoogleMapViewModel extends CheckoutBaseViewModel {
 
   void setCurrentStep(int step) {
     currentOrderStep = step;
-    onTrip = false;
+    onTrip = true;
     notifyListeners();
   }
 

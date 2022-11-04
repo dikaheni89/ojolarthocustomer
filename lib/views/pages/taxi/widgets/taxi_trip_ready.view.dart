@@ -19,7 +19,7 @@ class TaxiTripReadyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlidingUpPanel(
       backdropColor: Colors.transparent,
-      minHeight: 300,
+      minHeight: 500,
       borderRadius: BorderRadius.only(
         topRight: Radius.circular(30),
         topLeft: Radius.circular(30),

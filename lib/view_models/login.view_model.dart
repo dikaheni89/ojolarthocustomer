@@ -228,12 +228,11 @@ class LoginViewModel extends MyBaseViewModel with QrcodeScannerTrait {
       //
       await handleDeviceLogin(apiResponse);
     } catch (error) {
-      if(kDebugMode){
+      if (kDebugMode) {
         print(error);
       }
-      viewContext.showToast(msg: "$error", bgColor: Colors.red,
-        position: VxToastPosition.top
-      );
+      viewContext.showToast(
+          msg: "$error", bgColor: Colors.red, position: VxToastPosition.top);
     }
     //
     setBusyForObject(otpLogin, false);
@@ -252,10 +251,12 @@ class LoginViewModel extends MyBaseViewModel with QrcodeScannerTrait {
         password: passwordTEC.text,
       );
       await LocalStorageService.prefs.setString(
-        "password", passwordTEC.text,
+        "password",
+        passwordTEC.text,
       );
       await LocalStorageService.prefs.setString(
-        "email", emailTEC.text,
+        "email",
+        emailTEC.text,
       );
 
       //

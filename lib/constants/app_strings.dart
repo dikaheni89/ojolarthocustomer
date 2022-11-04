@@ -12,7 +12,7 @@ class AppStrings {
   static String get currencySymbol => env('currency');
   static String get countryCode => env('country_code');
   static bool get enableOtp => env('enble_otp') == "1";
-  static bool get enableOTPLogin => env('enableOTPLogin') == "1";
+  static bool get enableOTPLogin => env('enableOTPLogin') == "0";
   static bool get enableGoogleDistance => env('enableGoogleDistance') == "1";
   static bool get enableSingleVendor => env('enableSingleVendor') == "1";
   static bool get enableMultipleVendorOrder =>
@@ -133,12 +133,14 @@ class AppStrings {
   //
   //saving
   static Future<bool> saveAppSettingsToLocalStorage(String stringMap) async {
-    return await LocalStorageService.prefs.setString(AppStrings.appRemoteSettings, stringMap);
+    return await LocalStorageService.prefs
+        .setString(AppStrings.appRemoteSettings, stringMap);
   }
 
   static dynamic appSettingsObject;
   static Future<void> getAppSettingsFromLocalStorage() async {
-    appSettingsObject = LocalStorageService.prefs.getString(AppStrings.appRemoteSettings);
+    appSettingsObject =
+        LocalStorageService.prefs.getString(AppStrings.appRemoteSettings);
     if (appSettingsObject != null) {
       appSettingsObject = jsonDecode(appSettingsObject);
     }
